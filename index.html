@@ -325,6 +325,12 @@
     toggle.addEventListener('click', () => setMenu(!menu.classList.contains('open')));
     // Close the menu after tapping any link.
     menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+
+    // Make placeholder links (href="#") do nothing instead of jumping to the top.
+    // The "Back to top" link is excluded — it should still scroll up.
+    document.querySelectorAll('a[href="#"]:not(.footer-top)').forEach(a =>
+      a.addEventListener('click', e => e.preventDefault())
+    );
   </script>
 
 </body>
