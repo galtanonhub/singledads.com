@@ -20,10 +20,28 @@ html {
 }
 
 body {
-  background: var(--bg);
+  background-color: var(--bg);
   color: var(--text);
   font-family: var(--font);
   -webkit-font-smoothing: antialiased;
+}
+
+/* subtle checkerboard texture, faded left → right (never fully gone) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: conic-gradient(
+    rgba(255,255,255,0.014) 25%,
+    transparent 0 50%,
+    rgba(255,255,255,0.014) 0 75%,
+    transparent 0
+  );
+  background-size: 220px 220px;
+  -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0.25), rgba(0,0,0,1));
+  mask-image: linear-gradient(to right, rgba(0,0,0,0.25), rgba(0,0,0,1));
 }
 
 /* ── NAV ── */
@@ -37,7 +55,15 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 1rem 2.5rem;
-  background: var(--bg);
+  background: transparent;
+  transition: background 0.3s, backdrop-filter 0.3s;
+}
+
+/* fades in once the page is scrolled, so nav text stays readable over content */
+.nav.scrolled {
+  background: rgba(20, 24, 32, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .nav-logo {
@@ -215,7 +241,7 @@ body {
 }
 
 .section-alt {
-  background: var(--bg-soft);
+  background: rgba(255,255,255,0.022);
 }
 
 .eyebrow {

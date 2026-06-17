@@ -291,5 +291,13 @@
     </div>
   </footer>
 
+  <script>
+    // Fade in the nav background once the user scrolls past the top.
+    const nav = document.querySelector('.nav');
+    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 10);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+  </script>
+
 </body>
 </html>
