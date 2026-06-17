@@ -1,0 +1,8 @@
+# robots.txt for singledads.com
+# LAUNCH FILE — belongs at the domain root (public_html/robots.txt), NOT in /test/.
+# Do not deploy to the live root until launch (it allows crawling).
+
+User-agent: *
+Allow: /
+
+Sitemap: https://singledads.com/sitemap.xml

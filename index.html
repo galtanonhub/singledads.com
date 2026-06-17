@@ -23,6 +23,31 @@
   <meta name="twitter:description" content="A resource for fathers raising kids on their own.">
 
   <link rel="stylesheet" href="style.css">
+
+  <!-- Structured data (helps Google understand the site + feeds AI Overviews) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://singledads.com/#organization",
+        "name": "Single Dads",
+        "url": "https://singledads.com/",
+        "logo": "https://singledads.com/favicon.svg",
+        "description": "A resource for fathers raising kids on their own — practical help with legal, financial, mental health, food, dating, and more."
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://singledads.com/#website",
+        "url": "https://singledads.com/",
+        "name": "Single Dads",
+        "description": "A resource for fathers raising kids on their own.",
+        "publisher": { "@id": "https://singledads.com/#organization" }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
