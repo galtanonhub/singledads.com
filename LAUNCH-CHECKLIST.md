@@ -27,7 +27,8 @@ Work through these when moving the site live to the root domain.
 
 ## 6. Functionality
 - [ ] Wire the email signup form to a real service (e.g. Buttondown / Mailchimp).
-- [ ] Drop in the real `hero.mp4` and swap the "VIDEO GOES HERE" placeholder for a `<video>` tag.
+- [ ] Drop in `hero.mp4` (+ optional `hero.webm`, `hero-poster.jpg`); delete the placeholder
+      `<div>` and uncomment the ready-made `<video>` block in `index.html`.
 - [ ] Replace placeholder/inert resource links with real, vetted URLs.
 
 ## 7. Post-launch (in Google Search Console)

@@ -7,5 +7,6 @@ deployment:
     - /bin/cp index.html $DEPLOYPATH
     - /bin/cp style.css $DEPLOYPATH
     - /bin/cp favicon.svg $DEPLOYPATH
+    - /bin/cp apple-touch-icon.png $DEPLOYPATH
     - /bin/cp 404.html $DEPLOYPATH
     - /bin/cp .htaccess $DEPLOYPATH

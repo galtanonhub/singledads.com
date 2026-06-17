@@ -11,6 +11,7 @@
 
   <meta name="theme-color" content="#141820">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
   <!-- Social sharing (Open Graph + Twitter) -->
   <meta property="og:type" content="website">
@@ -102,7 +103,21 @@
       </div>
     </div>
 
-    <!-- Drop your Gemini-generated clip in as hero.mp4 and swap this div for a <video> tag -->
+    <!--
+      HERO VIDEO — when your Gemini clip is ready:
+      1. Add the files to this folder: hero.mp4 (and optionally hero.webm for smaller size)
+         plus hero-poster.jpg (a still frame shown before the video loads).
+      2. Delete the placeholder <div> below and uncomment the <video> block.
+      Attributes explained: autoplay+muted+loop = silent background motion;
+      playsinline = plays inline on iPhone (not fullscreen); preload="none" + poster = fast first paint.
+    -->
+    <!--
+    <video class="hero-video" autoplay muted loop playsinline preload="none"
+           poster="hero-poster.jpg" aria-hidden="true">
+      <source src="hero.webm" type="video/webm">
+      <source src="hero.mp4" type="video/mp4">
+    </video>
+    -->
     <div class="hero-video" aria-hidden="true">VIDEO GOES HERE</div>
   </section>
 
