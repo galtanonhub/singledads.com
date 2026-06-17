@@ -2,9 +2,7 @@
 deployment:
   tasks:
     # cPanel runs these when it deploys the repo.
-    # IMPORTANT: replace USERNAME below with your cPanel username (shown top-right in cPanel,
-    # or in the path cPanel gives you when you create the repository).
-    - export DEPLOYPATH=/home/USERNAME/public_html/test/
+    - export DEPLOYPATH=/home/singledads/public_html/test/
     - /bin/mkdir -p $DEPLOYPATH
     - /bin/cp index.html $DEPLOYPATH
     - /bin/cp style.css $DEPLOYPATH
