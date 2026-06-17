@@ -1,0 +1,4 @@
+# Serve the branded 404 page for missing URLs.
+# Path is absolute from the domain root. The site currently lives in /test/;
+# update this to "/404.html" at launch when the site moves to the root.
+ErrorDocument 404 /test/404.html
