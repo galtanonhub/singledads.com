@@ -6,3 +6,4 @@ deployment:
     - /bin/mkdir -p $DEPLOYPATH
     - /bin/cp index.html $DEPLOYPATH
     - /bin/cp style.css $DEPLOYPATH
+    - /bin/cp favicon.svg $DEPLOYPATH
