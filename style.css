@@ -344,6 +344,73 @@ body {
   font-style: italic;
 }
 
+/* ── TOPIC (two-column section) ── */
+.topic {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.topic-head h2 {
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1.02;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+}
+
+.topic-head p {
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--text-dim);
+}
+
+.topic-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.07);
+}
+
+.resource-link {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1.5rem 1.75rem;
+  background: var(--bg);
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.section-alt .resource-link {
+  background: var(--bg-soft);
+}
+
+.resource-link:hover {
+  background: rgba(201,169,110,0.08);
+}
+
+.resource-link strong {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.resource-link span {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--text-dim);
+  line-height: 1.5;
+}
+
+.resource-link.soon-link strong {
+  color: var(--text-dim);
+}
+
 /* ── SPLIT (COMMUNITY) ── */
 .split {
   display: grid;
@@ -496,6 +563,11 @@ body {
   .split {
     grid-template-columns: 1fr;
     gap: 3rem;
+  }
+
+  .topic {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
   }
 }
 
