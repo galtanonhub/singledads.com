@@ -22,7 +22,22 @@
       <li><a href="#merch">Merch</a></li>
     </ul>
     <a href="#join" class="nav-cta">Join the Community</a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#legal">Legal</a>
+    <a href="#financial">Financial</a>
+    <a href="#mental">Mental</a>
+    <a href="#resources">Resources</a>
+    <a href="#reading">Reading</a>
+    <a href="#dating">Dating</a>
+    <a href="#merch">Merch</a>
+    <a href="#join" class="mobile-join">Join the Community</a>
+  </div>
 
   <!-- HERO -->
   <section class="hero">
@@ -297,6 +312,18 @@
     const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 10);
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
+
+    // Mobile hamburger menu toggle.
+    const toggle = document.querySelector('.nav-toggle');
+    const menu = document.getElementById('mobile-menu');
+    const setMenu = (open) => {
+      menu.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', open);
+      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    };
+    toggle.addEventListener('click', () => setMenu(!menu.classList.contains('open')));
+    // Close the menu after tapping any link.
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
   </script>
 
 </body>
