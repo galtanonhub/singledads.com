@@ -29,6 +29,9 @@ Work through these when moving the site live to the root domain.
 - [ ] Wire the email signup form to a real service (e.g. Buttondown / Mailchimp).
 - [ ] Drop in `hero.mp4` (+ optional `hero.webm`, `hero-poster.jpg`); delete the placeholder
       `<div>` and uncomment the ready-made `<video>` block in `index.html`.
+- [ ] Add a hero video loading state (branded "SD" mark / subtle spinner over the poster
+      that fades out on the video's `canplay` event). Cosmetic preloader — only worth doing
+      once the real video exists. (Inspired by neuemontreal.com's spinning logo.)
 - [ ] Replace placeholder/inert resource links with real, vetted URLs.
 
 ## 7. Post-launch (in Google Search Console)
