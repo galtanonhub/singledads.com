@@ -170,6 +170,9 @@ body::before {
   border-bottom: 1px solid rgba(255,255,255,0.1);
   transform: translateY(-100%);
   transition: transform 0.3s ease;
+  /* scroll if the menu is taller than the screen (e.g. phone in landscape) */
+  max-height: 100vh;
+  overflow-y: auto;
 }
 
 .mobile-menu.open {
@@ -673,15 +676,10 @@ body::before {
   }
 }
 
-@media (max-width: 768px) {
-  .nav {
-    padding: 1rem 1.25rem;
-  }
-
-  .nav-links {
-    display: none;
-  }
-
+/* collapse the nav to a hamburger before the 7 desktop links get crowded
+   (covers small tablets and phones in landscape, not just narrow portrait) */
+@media (max-width: 960px) {
+  .nav-links,
   .nav-cta {
     display: none;
   }
@@ -692,6 +690,12 @@ body::before {
 
   .mobile-menu {
     display: flex;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav {
+    padding: 1rem 1.25rem;
   }
 
   .hero {
