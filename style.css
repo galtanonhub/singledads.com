@@ -618,11 +618,17 @@ body::before {
 
 /* ── FOOTER ── */
 .footer {
-  padding: 2.5rem 0;
+  padding: 3rem 0 2.5rem;
   border-top: 1px solid rgba(255,255,255,0.07);
 }
 
 .footer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.footer-top-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -638,9 +644,31 @@ body::before {
   color: var(--text);
 }
 
+.footer-social {
+  display: flex;
+  gap: 1.1rem;
+}
+
+.social-icon {
+  display: inline-flex;
+  color: var(--text-dim);
+  transition: color 0.2s, transform 0.2s;
+}
+
+.social-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.social-icon:hover {
+  color: var(--cream);
+  transform: translateY(-2px);
+}
+
 .footer-links {
   display: flex;
   gap: 1.75rem;
+  flex-wrap: wrap;
 }
 
 .footer-links a {
@@ -652,6 +680,16 @@ body::before {
 
 .footer-links a:hover {
   color: var(--text);
+}
+
+.footer-bottom-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.07);
 }
 
 .footer-copy {
