@@ -659,6 +659,17 @@ body::before {
   color: var(--text-dim);
 }
 
+.footer-top {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-top:hover {
+  color: var(--accent);
+}
+
 /* ── RESPONSIVE ── */
 @media (max-width: 980px) {
   .cards {
