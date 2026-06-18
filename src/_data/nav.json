@@ -30,20 +30,20 @@
     },
     {
       "label": "Resources",
-      "url": "/#resources",
+      "url": "/resources/",
       "children": [
-        { "label": "Food & Meal Prep",   "url": "#" },
-        { "label": "Childcare & School", "url": "#" },
-        { "label": "Local Resources",    "url": "#" }
+        { "label": "Food & Meal Prep",   "url": "/resources/food-meal-prep/" },
+        { "label": "Childcare & School", "url": "/resources/childcare-school/" },
+        { "label": "Local Resources",    "url": "/resources/local-resources/" }
       ]
     },
     {
       "label": "Reading",
-      "url": "/#reading",
+      "url": "/reading/",
       "children": [
-        { "label": "Articles", "url": "#" },
-        { "label": "Books",    "url": "#" },
-        { "label": "Podcasts", "url": "#" }
+        { "label": "Articles", "url": "/reading/articles/" },
+        { "label": "Books",    "url": "/reading/books/" },
+        { "label": "Podcasts", "url": "/reading/podcasts/" }
       ]
     },
     {
