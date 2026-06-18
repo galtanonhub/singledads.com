@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title or site.title }}</title>
+  <meta name="description" content="{{ description or site.description }}">
+
+  <!-- PRE-LAUNCH: keeps search engines from indexing the test site. REMOVE this line at launch. -->
+  <meta name="robots" content="noindex, nofollow">
+
+  <meta name="theme-color" content="{{ site.themeColor }}">
+  <link rel="icon" href="{{ '/favicon.svg' | url }}" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="{{ '/apple-touch-icon.png' | url }}">
+
+  <!-- Social sharing (Open Graph + Twitter) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ ogTitle or title or site.title }}">
+  <meta property="og:description" content="{{ ogDescription or description or site.description }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <!-- TODO at launch: add og:image (1200x630) once you have a share image -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ ogTitle or title or site.title }}">
+  <meta name="twitter:description" content="{{ twitterDescription or description or site.description }}">
+
+  <link rel="stylesheet" href="{{ '/style.css' | url }}">
+
+  <!-- Structured data (helps Google understand the site + feeds AI Overviews) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://singledads.com/#organization",
+        "name": "Single Dads",
+        "url": "https://singledads.com/",
+        "logo": "https://singledads.com/favicon.svg",
+        "description": "A resource for fathers raising kids on their own — practical help with legal, financial, mental health, food, dating, and more."
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://singledads.com/#website",
+        "url": "https://singledads.com/",
+        "name": "Single Dads",
+        "description": "A resource for fathers raising kids on their own.",
+        "publisher": { "@id": "https://singledads.com/#organization" }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to content</a>
+
+{% include "partials/nav.njk" %}
+
+  <main id="main">
+{{ content | safe }}
+  </main>
+
+{% include "partials/footer.njk" %}
+
+  <script>
+    // Fade in the nav background once the user scrolls past the top.
+    const nav = document.querySelector('.nav');
+    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 10);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    // Mobile hamburger menu toggle.
+    const toggle = document.querySelector('.nav-toggle');
+    const menu = document.getElementById('mobile-menu');
+    const setMenu = (open) => {
+      menu.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', open);
+      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    };
+    toggle.addEventListener('click', () => setMenu(!menu.classList.contains('open')));
+    // Close the menu after tapping any link.
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+
+    // Make placeholder links (href="#") do nothing instead of jumping to the top.
+    // The "Back to top" link is excluded — it should still scroll up.
+    document.querySelectorAll('a[href="#"]:not(.footer-top)').forEach(a =>
+      a.addEventListener('click', e => e.preventDefault())
+    );
+  </script>
+
+</body>
+</html>

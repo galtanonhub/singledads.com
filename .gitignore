@@ -1,0 +1,9 @@
+# Dependencies
+node_modules/
+
+# Eleventy build output (generated from src/ — not committed for now)
+_site/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db

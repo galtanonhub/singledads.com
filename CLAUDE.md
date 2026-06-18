@@ -1,5 +1,9 @@
 # SingleDads.com
 
+> **Session start:** This folder (`...\sites\singledads.com`) is the working root — launch sessions
+> from here so this file auto-loads. If a session opened in the parent `sites\` folder, this file
+> won't have loaded automatically; read it first before doing project work.
+
 A content/resource website for single fathers. Goal: a large, traffic-driving reference site
 (legal, financial, mental health, food/childcare, dating, reading, merch). Not e-commerce.
 Monetization planned via ads, affiliates (Amazon/Expedia), and merch.

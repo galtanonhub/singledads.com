@@ -141,6 +141,89 @@ body::before {
   color: var(--text);
 }
 
+/* ── DROPDOWN MENUS (desktop) ── */
+.nav-links .has-dropdown {
+  position: relative;
+}
+
+/* little caret after items that open a submenu */
+.nav-links .has-dropdown > a::after {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 0.45em;
+  vertical-align: middle;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-top: 4px solid currentColor;
+  opacity: 0.6;
+  transition: transform 0.2s;
+}
+
+.nav-links .has-dropdown:hover > a::after,
+.nav-links .has-dropdown:focus-within > a::after {
+  transform: rotate(180deg);
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+  z-index: 110;
+  min-width: 220px;
+  margin: 0;
+  padding: 0.4rem 0;
+  list-style: none;
+  background: var(--bg-soft);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  /* hidden until the parent is hovered or focused */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+/* transparent bridge so the cursor can cross the gap without the menu closing */
+.dropdown::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  right: 0;
+  height: 10px;
+}
+
+.nav-links .has-dropdown:hover .dropdown,
+.nav-links .has-dropdown:focus-within .dropdown {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(10px);
+}
+
+.dropdown li {
+  display: block;
+}
+
+.dropdown a {
+  display: block;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  text-transform: none;
+  white-space: nowrap;
+  color: var(--text-dim);
+  transition: color 0.2s, background 0.2s;
+}
+
+.dropdown a:hover {
+  color: var(--accent);
+  background: rgba(255, 255, 255, 0.04);
+}
+
 .nav-cta {
   font-size: 0.8rem;
   font-weight: 500;
@@ -235,6 +318,143 @@ body::before {
   background: var(--cream);
   text-align: center;
   padding: 0.9rem;
+}
+
+/* indented sub-items beneath each parent in the mobile menu */
+.mobile-menu .mobile-sublinks {
+  display: flex;
+  flex-direction: column;
+  padding-left: 1rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 0.2rem 0 0.6rem 0.25rem;
+}
+
+.mobile-menu .mobile-sublinks a {
+  font-size: 0.82rem;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0.02em;
+  color: var(--text-dim);
+  padding: 0.5rem 0;
+  border-bottom: none;
+}
+
+.mobile-menu .mobile-sublinks a:hover {
+  color: var(--accent);
+}
+
+/* ── CONTENT PAGES (sub-pages using the page layout) ── */
+.page-header {
+  padding: 9rem 0 3rem; /* top padding clears the fixed nav */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 1.75rem;
+}
+
+.breadcrumb a {
+  color: var(--text-dim);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.breadcrumb a:hover {
+  color: var(--accent);
+}
+
+.breadcrumb span[aria-current] {
+  color: var(--text);
+}
+
+.page-header h1 {
+  font-size: clamp(2.2rem, 6vw, 3.4rem);
+  font-weight: 600;
+  line-height: 1.08;
+  margin: 0.6rem 0 1.2rem;
+  color: var(--text);
+}
+
+.page-lead {
+  font-size: 1.15rem;
+  font-weight: 300;
+  line-height: 1.6;
+  max-width: 640px;
+  color: var(--text-dim);
+}
+
+.page-body {
+  padding: 4rem 0 6rem;
+}
+
+.prose {
+  max-width: 720px;
+}
+
+.prose h2 {
+  font-size: 1.55rem;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 2.75rem 0 1rem;
+  color: var(--cream);
+}
+
+.prose h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 2rem 0 0.75rem;
+  color: var(--text);
+}
+
+.prose p {
+  font-size: 1.02rem;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--text-dim);
+  margin-bottom: 1.25rem;
+}
+
+.prose a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.prose ul,
+.prose ol {
+  margin: 0 0 1.5rem 1.25rem;
+  color: var(--text-dim);
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+.prose li {
+  margin-bottom: 0.6rem;
+}
+
+.prose strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* highlighted aside inside long-form content */
+.prose .callout {
+  border-left: 2px solid var(--accent);
+  background: var(--bg-soft);
+  padding: 1.25rem 1.5rem;
+  margin: 2rem 0;
+}
+
+.prose .callout p {
+  margin-bottom: 0;
 }
 
 /* ── HERO ── */

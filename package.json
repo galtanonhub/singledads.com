@@ -1,0 +1,13 @@
+{
+  "name": "singledads.com",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SingleDads.com — a resource site for single fathers. Built with Eleventy (static HTML output, no framework runtime).",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}
