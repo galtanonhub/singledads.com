@@ -12,11 +12,11 @@
     },
     {
       "label": "Financial",
-      "url": "/#financial",
+      "url": "/financial/",
       "children": [
-        { "label": "Budgeting on One Income", "url": "#" },
-        { "label": "Assistance Programs",      "url": "#" },
-        { "label": "Funding a Custody Case",   "url": "#" }
+        { "label": "Budgeting on One Income", "url": "/financial/budgeting/" },
+        { "label": "Assistance Programs",      "url": "/financial/assistance/" },
+        { "label": "Funding a Custody Case",   "url": "/financial/funding-custody/" }
       ]
     },
     {
