@@ -1,0 +1,24 @@
+# Serve the branded 404 page for missing URLs.
+# Path is absolute from the domain root. The site currently lives in /test/;
+# update this to "/404.html" at launch when the site moves to the root.
+ErrorDocument 404 /test/404.html
+
+# --- Security headers ---
+<IfModule mod_headers.c>
+  # Stop browsers from MIME-sniffing a response away from the declared content-type.
+  Header set X-Content-Type-Options "nosniff"
+  # Disallow the site being framed by others (clickjacking protection).
+  Header set X-Frame-Options "SAMEORIGIN"
+  # Send only the origin as referrer to other sites (privacy).
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  # Deny powerful APIs the site doesn't use.
+  Header set Permissions-Policy "geolocation=(), camera=(), microphone=(), payment=()"
+</IfModule>
+
+# --- Light caching for static assets (faster repeat visits) ---
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 7 days"
+  ExpiresByType image/svg+xml "access plus 30 days"
+  ExpiresByType video/mp4 "access plus 30 days"
+</IfModule>

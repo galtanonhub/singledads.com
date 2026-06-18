@@ -2,11 +2,9 @@
 deployment:
   tasks:
     # cPanel runs these when it deploys the repo.
+    # The site is pre-built into _site/ (committed), so we just copy that whole
+    # tree — index.html, style.css, the icons, 404.html, .htaccess, robots.txt,
+    # sitemap.xml, and every generated page (e.g. legal/custody/).
     - export DEPLOYPATH=/home/singledads/public_html/test/
     - /bin/mkdir -p $DEPLOYPATH
-    - /bin/cp index.html $DEPLOYPATH
-    - /bin/cp style.css $DEPLOYPATH
-    - /bin/cp favicon.svg $DEPLOYPATH
-    - /bin/cp apple-touch-icon.png $DEPLOYPATH
-    - /bin/cp 404.html $DEPLOYPATH
-    - /bin/cp .htaccess $DEPLOYPATH
+    - /bin/cp -R _site/. $DEPLOYPATH

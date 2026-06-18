@@ -1,8 +1,9 @@
 # Dependencies
 node_modules/
 
-# Eleventy build output (generated from src/ — not committed for now)
-_site/
+# NOTE: _site/ (the Eleventy build output) IS committed on purpose —
+# cPanel Git deploys it to public_html/test/ via .cpanel.yml. Rebuild it with
+# `npm run build` and commit it alongside source changes.
 
 # OS / editor cruft
 .DS_Store
