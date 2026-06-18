@@ -343,6 +343,16 @@ body::before {
   color: var(--accent);
 }
 
+/* honeypot field — visually hidden, off-screen; only bots fill it */
+.hp-field {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
 /* ── CONTENT PAGES (sub-pages using the page layout) ── */
 .page-header {
   padding: 9rem 0 3rem; /* top padding clears the fixed nav */

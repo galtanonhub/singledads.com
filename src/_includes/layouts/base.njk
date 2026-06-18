@@ -86,6 +86,33 @@
     document.querySelectorAll('a[href="#"]:not(.footer-top)').forEach(a =>
       a.addEventListener('click', e => e.preventDefault())
     );
+
+    // Launch-list signup: submit in the background so the visitor stays on the page.
+    const joinForm = document.querySelector('.join-form');
+    if (joinForm) {
+      const status = document.getElementById('join-status');
+      const setStatus = (msg) => { if (status) status.textContent = msg; };
+      joinForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        setStatus('Submitting…');
+        try {
+          const res = await fetch(joinForm.action, {
+            method: 'POST',
+            headers: { 'X-Requested-With': 'fetch' },
+            body: new FormData(joinForm),
+          });
+          const data = await res.json().catch(() => ({}));
+          if (res.ok && data.ok) {
+            joinForm.reset();
+            setStatus(data.message || "Thanks — you're on the list.");
+          } else {
+            setStatus(data.message || 'Sorry — something went wrong. Please try again.');
+          }
+        } catch (err) {
+          setStatus('Sorry — something went wrong. Please try again.');
+        }
+      });
+    }
   </script>
 
 </body>

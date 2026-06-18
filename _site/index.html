@@ -419,11 +419,13 @@
       <div class="join-inner">
         <h2>Get the guide. Join the community.</h2>
         <p>Sign up to be notified as we launch new resources. No spam — just useful things for single dads.</p>
-        <form class="join-form" onsubmit="return false;">
-          <input type="email" placeholder="Your email address" required aria-label="Your email address">
+        <form class="join-form" action="/test/save-email.php" method="post">
+          <input type="email" name="email" placeholder="Your email address" required aria-label="Your email address">
+          <!-- honeypot: hidden from people, catches spam bots. Real users leave it empty. -->
+          <input type="text" name="company" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
           <button type="submit" class="btn">Notify Me</button>
         </form>
-        <p class="join-note"><!-- TODO: wire this form to an email service (e.g. Mailchimp, Buttondown) before launch --> Form is a placeholder — not yet connected.</p>
+        <p class="join-note" id="join-status" role="status" aria-live="polite">No spam — just a heads-up when we launch.</p>
       </div>
     </div>
   </section>
