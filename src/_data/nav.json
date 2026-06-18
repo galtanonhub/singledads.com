@@ -3,11 +3,11 @@
   "items": [
     {
       "label": "Legal",
-      "url": "/#legal",
+      "url": "/legal/",
       "children": [
         { "label": "Custody & Visitation", "url": "/legal/custody/" },
-        { "label": "Child Support",         "url": "#" },
-        { "label": "Finding Legal Help",    "url": "#" }
+        { "label": "Child Support",         "url": "/legal/child-support/" },
+        { "label": "Finding Legal Help",    "url": "/legal/finding-legal-help/" }
       ]
     },
     {

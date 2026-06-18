@@ -59,11 +59,11 @@
     <a href="/test/" class="nav-logo">Single Dads</a>
     <ul class="nav-links">
       <li class="has-dropdown">
-        <a href="/test/#legal" aria-haspopup="true">Legal</a>
+        <a href="/test/legal/" aria-haspopup="true">Legal</a>
         <ul class="dropdown">
           <li><a href="/test/legal/custody/">Custody &amp; Visitation</a></li>
-          <li><a href="#">Child Support</a></li>
-          <li><a href="#">Finding Legal Help</a></li>
+          <li><a href="/test/legal/child-support/">Child Support</a></li>
+          <li><a href="/test/legal/finding-legal-help/">Finding Legal Help</a></li>
         </ul>
       </li>
       <li class="has-dropdown">
@@ -120,11 +120,11 @@
 
   <!-- MOBILE MENU -->
   <div class="mobile-menu" id="mobile-menu">
-    <a href="/test/#legal">Legal</a>
+    <a href="/test/legal/">Legal</a>
     <div class="mobile-sublinks">
       <a href="/test/legal/custody/">Custody &amp; Visitation</a>
-      <a href="#">Child Support</a>
-      <a href="#">Finding Legal Help</a>
+      <a href="/test/legal/child-support/">Child Support</a>
+      <a href="/test/legal/finding-legal-help/">Finding Legal Help</a>
     </div>
     <a href="/test/#financial">Financial</a>
     <div class="mobile-sublinks">
@@ -170,7 +170,7 @@
       <nav class="breadcrumb" aria-label="Breadcrumb">
         <a href="/test/">Home</a>
         <span aria-hidden="true">/</span>
-        <a href="/test/#legal">Legal</a>
+        <a href="/test/legal/">Legal</a>
         <span aria-hidden="true">/</span>
         <span aria-current="page">Custody &amp; Visitation</span>
       </nav><span class="eyebrow">Legal</span>
@@ -255,7 +255,7 @@
         </div>
       </div>
       <nav class="footer-links">
-        <a href="/test/#legal">Legal</a>
+        <a href="/test/legal/">Legal</a>
         <a href="/test/#financial">Financial</a>
         <a href="/test/#mental">Mental</a>
         <a href="/test/#resources">Resources</a>
@@ -295,6 +295,33 @@
     document.querySelectorAll('a[href="#"]:not(.footer-top)').forEach(a =>
       a.addEventListener('click', e => e.preventDefault())
     );
+
+    // Launch-list signup: submit in the background so the visitor stays on the page.
+    const joinForm = document.querySelector('.join-form');
+    if (joinForm) {
+      const status = document.getElementById('join-status');
+      const setStatus = (msg) => { if (status) status.textContent = msg; };
+      joinForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        setStatus('Submitting…');
+        try {
+          const res = await fetch(joinForm.action, {
+            method: 'POST',
+            headers: { 'X-Requested-With': 'fetch' },
+            body: new FormData(joinForm),
+          });
+          const data = await res.json().catch(() => ({}));
+          if (res.ok && data.ok) {
+            joinForm.reset();
+            setStatus(data.message || "Thanks — you're on the list.");
+          } else {
+            setStatus(data.message || 'Sorry — something went wrong. Please try again.');
+          }
+        } catch (err) {
+          setStatus('Sorry — something went wrong. Please try again.');
+        }
+      });
+    }
   </script>
 
 </body>
