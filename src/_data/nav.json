@@ -21,11 +21,11 @@
     },
     {
       "label": "Mental",
-      "url": "/#mental",
+      "url": "/mental/",
       "children": [
-        { "label": "Support Groups", "url": "#" },
-        { "label": "Counseling",     "url": "#" },
-        { "label": "Helplines",      "url": "#" }
+        { "label": "Support Groups", "url": "/mental/support-groups/" },
+        { "label": "Counseling",     "url": "/mental/counseling/" },
+        { "label": "Helplines",      "url": "/mental/helplines/" }
       ]
     },
     {
