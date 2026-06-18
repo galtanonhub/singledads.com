@@ -9,8 +9,23 @@ A content/resource website for single fathers. Goal: a large, traffic-driving re
 Monetization planned via ads, affiliates (Amazon/Expedia), and merch.
 
 ## Stack & conventions
-- **Hand-written HTML/CSS, no framework, no build step.** The owner dislikes WordPress. Vanilla JS
-  only where genuinely needed (nav scroll fade, mobile menu toggle).
+- **Eleventy (11ty v3) builds hand-written HTML/CSS into plain static HTML — no client framework.**
+  The owner dislikes WordPress; Eleventy is a build-only static generator (no database/admin/PHP).
+  Vanilla JS only where genuinely needed (nav scroll fade, mobile menu toggle).
+- **Project shape:** templates live in `src/` (`.njk`), build output in `_site/` (committed, deployed).
+  - `src/_includes/layouts/base.njk` — shared `<head>`, scripts, page shell (every page).
+  - `src/_includes/layouts/page.njk` — reusable content-page layout (breadcrumb, header, prose body).
+  - `src/_includes/partials/` — `nav.njk`, `footer.njk`.
+  - `src/_data/nav.json` — the menu (incl. dropdown `children`), defined ONCE; drives nav + mobile + footer.
+  - `src/_data/site.json` — site title/description/url/theme color.
+  - Static assets (`style.css`, icons, `404.html`, `.htaccess`, `robots.txt`, `sitemap.xml`) live in `src/`,
+    passthrough-copied by `eleventy.config.js`.
+- **Adding a page:** create `src/<section>/<name>.njk` with `layout: layouts/page.njk` + front matter
+  (`title`, `eyebrow`, `section`, `sectionUrl`, `lead`), then point its link in `nav.json` at the new path.
+- **Internal links inside page content** must use the url filter: `<a href="{{ '/path' | url }}">` so the
+  `pathPrefix` is applied. External `https://` links are untouched.
+- **pathPrefix** is `/test/` (pre-launch staging). At launch, change it to `/` in `eleventy.config.js`
+  (one line) — `check-launch.js` flags this.
 - No external font CDNs — Google Fonts hang on the owner's network. Use the system font stack.
 - Keep everything **responsive**; the site must work on all mobile devices (width-based breakpoints,
   not device-specific). Nav collapses to a hamburger at ≤960px.
@@ -23,16 +38,20 @@ Monetization planned via ads, affiliates (Amazon/Expedia), and merch.
 - Nav order: LEGAL · FINANCIAL · MENTAL · RESOURCES · READING · DATING · MERCH.
 
 ## Local development
-- Preview server: `npx serve . -l 3000` then open http://localhost:3000
-  (the server often needs restarting between sessions — just rerun it).
+- `npm start` → Eleventy dev server with live reload at http://localhost:8080/test/.
+- `npm run build` → regenerate `_site/`. Always rebuild before committing so `_site/` matches `src/`.
+- `node check-launch.js` (after a build) → lists pre-launch items still pending.
 - Hero shows a "VIDEO GOES HERE" placeholder until the owner drops in a Gemini-made `hero.mp4`.
 
 ## Deployment
-- Traditional cPanel/FTP host. Target structure on the server:
-  - `public_html/index.html` = the coming-soon page (`coming-soon.html` renamed)
-  - `public_html/test/` = the full site (`index.html`, `style.css`)
-- Auto-deploy is planned via cPanel Git Version Control + `.cpanel.yml` (replace USERNAME first).
-  Until that's live, changes must be re-uploaded manually to `test/`.
+- Traditional cPanel host (username `singledads`). Deploy is **cPanel Git Version Control** (manual trigger),
+  not FTP — the failed FTP GitHub Action was removed.
+- `.cpanel.yml` copies the committed `_site/` tree to `public_html/test/`.
+- Server structure: `public_html/index.html` = coming-soon page; `public_html/test/` = the full built site.
+- **Deploy flow:** edit `src/` → `npm run build` → commit (including `_site/`) → push to `main` →
+  in cPanel: **Update from Remote** → **Deploy HEAD Commit**.
+- At launch (moving to root): set `pathPrefix: "/"`, point `.cpanel.yml` `DEPLOYPATH` at `public_html/`,
+  rebuild, and clear the items in `check-launch.js` / `LAUNCH-CHECKLIST.md`.
 
 ## Open TODOs before launch
 - Verify every external resource link.
