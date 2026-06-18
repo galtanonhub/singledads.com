@@ -113,6 +113,14 @@
         }
       });
     }
+
+    // State picker on the Legal hub: jump to the chosen state's resource page.
+    const stateSelect = document.getElementById('state-select');
+    if (stateSelect) {
+      stateSelect.addEventListener('change', () => {
+        if (stateSelect.value) window.location.href = stateSelect.value;
+      });
+    }
   </script>
 
 </body>

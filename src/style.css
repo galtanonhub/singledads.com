@@ -467,6 +467,84 @@ body::before {
   margin-bottom: 0;
 }
 
+/* ── STATE PICKER (Legal hub) ── */
+.state-picker {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: var(--bg-soft);
+  padding: 1.5rem;
+  margin: 0 0 2.5rem;
+}
+
+.state-picker-intro {
+  margin: 0 0 1rem;
+  color: var(--text-dim);
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.state-picker-intro strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+#state-select {
+  width: 100%;
+  max-width: 360px;
+  padding: 0.7rem 0.9rem;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 0;
+  cursor: pointer;
+}
+
+#state-select:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.state-list {
+  margin-top: 1rem;
+}
+
+.state-list summary {
+  cursor: pointer;
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+}
+
+.state-list summary:hover {
+  color: var(--accent);
+}
+
+.state-list ul {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 0.5rem 1.5rem;
+}
+
+.state-list a {
+  color: var(--text-dim);
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
+.state-list a:hover {
+  color: var(--accent);
+}
+
+.page-foot-note {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  margin-top: 2.5rem;
+}
+
 /* ── HERO ── */
 .hero {
   position: relative;

@@ -8,6 +8,26 @@ description: "Legal help for single fathers: custody and visitation, child suppo
 ---
         <p>The legal stuff is where a lot of single dads feel most outmatched. These guides break down the pieces that come up most — written to be read by a tired parent at 11pm, not a law student.</p>
 
+        <div class="state-picker">
+          <p class="state-picker-intro"><strong>Start with your state.</strong> Custody, child support, and legal aid are run at the state level — jump straight to your state's official resources.</p>
+          <select id="state-select" aria-label="Choose your state to find local legal resources">
+            <option value="">Choose your state…</option>
+            {%- for s in states.list %}
+            <option value="{{ ('/legal/' + s.slug + '/') | url }}">{{ s.name }}</option>
+            {%- endfor %}
+          </select>
+          <details class="state-list">
+            <summary>Or browse all states</summary>
+            <ul>
+              {%- for s in states.list %}
+              <li><a href="{{ ('/legal/' + s.slug + '/') | url }}">{{ s.name }}</a></li>
+              {%- endfor %}
+            </ul>
+          </details>
+        </div>
+
+        <h2>The basics, in plain English</h2>
+
         <div class="cards">
           <article class="card">
             <span class="card-num">Custody</span>
