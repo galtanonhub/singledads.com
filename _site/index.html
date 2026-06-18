@@ -3,27 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Single Dads — You're Not Alone</title>
+  <title>Single Dads — You&#39;re Not Alone</title>
   <meta name="description" content="A resource for fathers raising kids on their own — practical help with legal, financial, mental health, food, dating, and more.">
 
   <!-- PRE-LAUNCH: keeps search engines from indexing the test site. REMOVE this line at launch. -->
   <meta name="robots" content="noindex, nofollow">
 
   <meta name="theme-color" content="#141820">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="icon" href="/test/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/test/apple-touch-icon.png">
 
   <!-- Social sharing (Open Graph + Twitter) -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Single Dads — You're Not Alone">
+  <meta property="og:title" content="Single Dads — You&#39;re Not Alone">
   <meta property="og:description" content="A resource for fathers raising kids on their own — practical help across every part of the job.">
   <meta property="og:url" content="https://singledads.com/">
   <!-- TODO at launch: add og:image (1200x630) once you have a share image -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Single Dads — You're Not Alone">
+  <meta name="twitter:title" content="Single Dads — You&#39;re Not Alone">
   <meta name="twitter:description" content="A resource for fathers raising kids on their own.">
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/test/style.css">
 
   <!-- Structured data (helps Google understand the site + feeds AI Overviews) -->
   <script type="application/ld+json">
@@ -52,21 +52,67 @@
 </head>
 <body>
 
-  <a href="#legal" class="skip-link">Skip to content</a>
+  <a href="#main" class="skip-link">Skip to content</a>
 
   <!-- NAV -->
   <nav class="nav">
-    <a href="/" class="nav-logo">Single Dads</a>
+    <a href="/test/" class="nav-logo">Single Dads</a>
     <ul class="nav-links">
-      <li><a href="#legal">Legal</a></li>
-      <li><a href="#financial">Financial</a></li>
-      <li><a href="#mental">Mental</a></li>
-      <li><a href="#resources">Resources</a></li>
-      <li><a href="#reading">Reading</a></li>
-      <li><a href="#dating">Dating</a></li>
-      <li><a href="#merch">Merch</a></li>
+      <li class="has-dropdown">
+        <a href="/test/#legal" aria-haspopup="true">Legal</a>
+        <ul class="dropdown">
+          <li><a href="/test/legal/custody/">Custody &amp; Visitation</a></li>
+          <li><a href="#">Child Support</a></li>
+          <li><a href="#">Finding Legal Help</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <a href="/test/#financial" aria-haspopup="true">Financial</a>
+        <ul class="dropdown">
+          <li><a href="#">Budgeting on One Income</a></li>
+          <li><a href="#">Assistance Programs</a></li>
+          <li><a href="#">Funding a Custody Case</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <a href="/test/#mental" aria-haspopup="true">Mental</a>
+        <ul class="dropdown">
+          <li><a href="#">Support Groups</a></li>
+          <li><a href="#">Counseling</a></li>
+          <li><a href="#">Helplines</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <a href="/test/#resources" aria-haspopup="true">Resources</a>
+        <ul class="dropdown">
+          <li><a href="#">Food &amp; Meal Prep</a></li>
+          <li><a href="#">Childcare &amp; School</a></li>
+          <li><a href="#">Local Resources</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <a href="/test/#reading" aria-haspopup="true">Reading</a>
+        <ul class="dropdown">
+          <li><a href="#">Articles</a></li>
+          <li><a href="#">Books</a></li>
+          <li><a href="#">Podcasts</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <a href="/test/#dating" aria-haspopup="true">Dating</a>
+        <ul class="dropdown">
+          <li><a href="#">Getting Back Out There</a></li>
+          <li><a href="#">App &amp; Site Picks</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <a href="/test/#merch" aria-haspopup="true">Merch</a>
+        <ul class="dropdown">
+          <li><a href="#">The Shop</a></li>
+        </ul>
+      </li>
     </ul>
-    <a href="#join" class="nav-cta">Join the Community</a>
+    <a href="/test/#join" class="nav-cta">Join the Community</a>
     <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
       <span></span><span></span><span></span>
     </button>
@@ -74,16 +120,50 @@
 
   <!-- MOBILE MENU -->
   <div class="mobile-menu" id="mobile-menu">
-    <a href="#legal">Legal</a>
-    <a href="#financial">Financial</a>
-    <a href="#mental">Mental</a>
-    <a href="#resources">Resources</a>
-    <a href="#reading">Reading</a>
-    <a href="#dating">Dating</a>
-    <a href="#merch">Merch</a>
-    <a href="#join" class="mobile-join">Join the Community</a>
+    <a href="/test/#legal">Legal</a>
+    <div class="mobile-sublinks">
+      <a href="/test/legal/custody/">Custody &amp; Visitation</a>
+      <a href="#">Child Support</a>
+      <a href="#">Finding Legal Help</a>
+    </div>
+    <a href="/test/#financial">Financial</a>
+    <div class="mobile-sublinks">
+      <a href="#">Budgeting on One Income</a>
+      <a href="#">Assistance Programs</a>
+      <a href="#">Funding a Custody Case</a>
+    </div>
+    <a href="/test/#mental">Mental</a>
+    <div class="mobile-sublinks">
+      <a href="#">Support Groups</a>
+      <a href="#">Counseling</a>
+      <a href="#">Helplines</a>
+    </div>
+    <a href="/test/#resources">Resources</a>
+    <div class="mobile-sublinks">
+      <a href="#">Food &amp; Meal Prep</a>
+      <a href="#">Childcare &amp; School</a>
+      <a href="#">Local Resources</a>
+    </div>
+    <a href="/test/#reading">Reading</a>
+    <div class="mobile-sublinks">
+      <a href="#">Articles</a>
+      <a href="#">Books</a>
+      <a href="#">Podcasts</a>
+    </div>
+    <a href="/test/#dating">Dating</a>
+    <div class="mobile-sublinks">
+      <a href="#">Getting Back Out There</a>
+      <a href="#">App &amp; Site Picks</a>
+    </div>
+    <a href="/test/#merch">Merch</a>
+    <div class="mobile-sublinks">
+      <a href="#">The Shop</a>
+    </div>
+    <a href="/test/#join" class="mobile-join">Join the Community</a>
   </div>
 
+
+  <main id="main">
   <!-- HERO -->
   <section class="hero">
     <div class="hero-inner">
@@ -348,6 +428,8 @@
     </div>
   </section>
 
+  </main>
+
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container footer-inner">
@@ -376,13 +458,13 @@
         </div>
       </div>
       <nav class="footer-links">
-        <a href="#legal">Legal</a>
-        <a href="#financial">Financial</a>
-        <a href="#mental">Mental</a>
-        <a href="#resources">Resources</a>
-        <a href="#reading">Reading</a>
-        <a href="#dating">Dating</a>
-        <a href="#merch">Merch</a>
+        <a href="/test/#legal">Legal</a>
+        <a href="/test/#financial">Financial</a>
+        <a href="/test/#mental">Mental</a>
+        <a href="/test/#resources">Resources</a>
+        <a href="/test/#reading">Reading</a>
+        <a href="/test/#dating">Dating</a>
+        <a href="/test/#merch">Merch</a>
       </nav>
       <div class="footer-bottom-row">
         <span class="footer-copy">© 2026 SingleDads.com</span>
@@ -390,6 +472,7 @@
       </div>
     </div>
   </footer>
+
 
   <script>
     // Fade in the nav background once the user scrolls past the top.

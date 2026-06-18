@@ -1,0 +1,65 @@
+{
+  "comment": "The site's main menu, defined ONCE here. Edit this file to add/remove menu items or dropdown sub-items. Each top-level item has an optional `children` array for its dropdown. URLs starting with '/' are root-relative and get the correct path prefix automatically. Top-level items currently point to homepage sections ('/#legal'); change to a real section page (e.g. '/legal/') once you build one. Sub-item '#' URLs are inert placeholders — replace each with a real path like '/legal/custody/' as you build that page.",
+  "items": [
+    {
+      "label": "Legal",
+      "url": "/#legal",
+      "children": [
+        { "label": "Custody & Visitation", "url": "/legal/custody/" },
+        { "label": "Child Support",         "url": "#" },
+        { "label": "Finding Legal Help",    "url": "#" }
+      ]
+    },
+    {
+      "label": "Financial",
+      "url": "/#financial",
+      "children": [
+        { "label": "Budgeting on One Income", "url": "#" },
+        { "label": "Assistance Programs",      "url": "#" },
+        { "label": "Funding a Custody Case",   "url": "#" }
+      ]
+    },
+    {
+      "label": "Mental",
+      "url": "/#mental",
+      "children": [
+        { "label": "Support Groups", "url": "#" },
+        { "label": "Counseling",     "url": "#" },
+        { "label": "Helplines",      "url": "#" }
+      ]
+    },
+    {
+      "label": "Resources",
+      "url": "/#resources",
+      "children": [
+        { "label": "Food & Meal Prep",   "url": "#" },
+        { "label": "Childcare & School", "url": "#" },
+        { "label": "Local Resources",    "url": "#" }
+      ]
+    },
+    {
+      "label": "Reading",
+      "url": "/#reading",
+      "children": [
+        { "label": "Articles", "url": "#" },
+        { "label": "Books",    "url": "#" },
+        { "label": "Podcasts", "url": "#" }
+      ]
+    },
+    {
+      "label": "Dating",
+      "url": "/#dating",
+      "children": [
+        { "label": "Getting Back Out There", "url": "#" },
+        { "label": "App & Site Picks",        "url": "#" }
+      ]
+    },
+    {
+      "label": "Merch",
+      "url": "/#merch",
+      "children": [
+        { "label": "The Shop", "url": "#" }
+      ]
+    }
+  ]
+}

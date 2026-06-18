@@ -1,0 +1,29 @@
+---
+layout: layouts/base.njk
+---
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="{{ '/' | url }}">Home</a>
+        {%- if section %}
+        <span aria-hidden="true">/</span>
+        <a href="{{ sectionUrl | url }}">{{ section }}</a>
+        {%- endif %}
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">{{ title }}</span>
+      </nav>
+      {%- if eyebrow %}<span class="eyebrow">{{ eyebrow }}</span>{% endif %}
+      <h1>{{ heading or title }}</h1>
+      {%- if lead %}<p class="page-lead">{{ lead }}</p>{% endif %}
+    </div>
+  </section>
+
+  <!-- PAGE CONTENT -->
+  <section class="section page-body">
+    <div class="container">
+      <article class="prose">
+{{ content | safe }}
+      </article>
+    </div>
+  </section>

@@ -1,0 +1,39 @@
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="{{ '/' | url }}" class="nav-logo">Single Dads</a>
+    <ul class="nav-links">
+      {%- for item in nav.items %}
+      {%- if item.children and item.children.length %}
+      <li class="has-dropdown">
+        <a href="{{ item.url | url }}" aria-haspopup="true">{{ item.label }}</a>
+        <ul class="dropdown">
+          {%- for child in item.children %}
+          <li><a href="{{ child.url | url }}">{{ child.label }}</a></li>
+          {%- endfor %}
+        </ul>
+      </li>
+      {%- else %}
+      <li><a href="{{ item.url | url }}">{{ item.label }}</a></li>
+      {%- endif %}
+      {%- endfor %}
+    </ul>
+    <a href="{{ '/#join' | url }}" class="nav-cta">Join the Community</a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu">
+    {%- for item in nav.items %}
+    <a href="{{ item.url | url }}">{{ item.label }}</a>
+    {%- if item.children and item.children.length %}
+    <div class="mobile-sublinks">
+      {%- for child in item.children %}
+      <a href="{{ child.url | url }}">{{ child.label }}</a>
+      {%- endfor %}
+    </div>
+    {%- endif %}
+    {%- endfor %}
+    <a href="{{ '/#join' | url }}" class="mobile-join">Join the Community</a>
+  </div>
