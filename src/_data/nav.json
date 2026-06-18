@@ -48,17 +48,17 @@
     },
     {
       "label": "Dating",
-      "url": "/#dating",
+      "url": "/dating/",
       "children": [
-        { "label": "Getting Back Out There", "url": "#" },
-        { "label": "App & Site Picks",        "url": "#" }
+        { "label": "Getting Back Out There", "url": "/dating/getting-back-out-there/" },
+        { "label": "App & Site Picks",        "url": "/dating/app-site-picks/" }
       ]
     },
     {
       "label": "Merch",
-      "url": "/#merch",
+      "url": "/merch/",
       "children": [
-        { "label": "The Shop", "url": "#" }
+        { "label": "The Shop", "url": "/merch/" }
       ]
     }
   ]
