@@ -47,4 +47,12 @@ return [
     'going'        => '',  // flight-deal alerts (formerly Scott's Cheap Flights)
     'koa'          => '',  // camping / road-trip lodging
     'travel-insurance' => '',
+
+    // Dating affiliates — Dating › App & Site Picks
+    'match'            => '',
+    'hinge'            => '',
+    'singleparentmeet' => '',
+    'bumble'           => '',
+    'eharmony'         => '',
+    'ourtime'          => '',
 ];

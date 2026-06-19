@@ -3,12 +3,16 @@
 // Day-to-day you don't run this by hand — `npm start` previews, `npm run build` builds.
 
 module.exports = function (eleventyConfig) {
+  // ISO yyyy-mm-dd, used by sitemap.njk for <lastmod>. Falls back to the build date.
+  eleventyConfig.addFilter("isoDate", (d) =>
+    (d ? new Date(d) : new Date()).toISOString().slice(0, 10)
+  );
+
   // --- Static assets: copied to the output untouched, keeping the same URLs as today ---
   eleventyConfig.addPassthroughCopy("src/style.css");
   eleventyConfig.addPassthroughCopy("src/favicon.svg");
   eleventyConfig.addPassthroughCopy("src/apple-touch-icon.png");
   eleventyConfig.addPassthroughCopy("src/robots.txt");
-  eleventyConfig.addPassthroughCopy("src/sitemap.xml");
   eleventyConfig.addPassthroughCopy("src/.htaccess");
   eleventyConfig.addPassthroughCopy("src/save-email.php"); // PHP form handler (runs on the cPanel server)
   eleventyConfig.addPassthroughCopy("src/go.php");         // affiliate link redirector (/go/<slug>)
