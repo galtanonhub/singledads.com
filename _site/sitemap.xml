@@ -43,12 +43,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://singledads.com/financial/</loc>
-    <lastmod>2026-06-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://singledads.com/mental/helplines/</loc>
     <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
@@ -176,6 +170,18 @@
   </url>
   <url>
     <loc>https://singledads.com/resources/</loc>
+    <lastmod>2026-06-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://singledads.com/financial/taxes/</loc>
+    <lastmod>2026-06-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://singledads.com/financial/</loc>
     <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

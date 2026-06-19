@@ -15,6 +15,7 @@
       "url": "/financial/",
       "children": [
         { "label": "Budgeting on One Income", "url": "/financial/budgeting/" },
+        { "label": "Taxes & Credits",          "url": "/financial/taxes/" },
         { "label": "Assistance Programs",      "url": "/financial/assistance/" },
         { "label": "Funding a Custody Case",   "url": "/financial/funding-custody/" }
       ]
