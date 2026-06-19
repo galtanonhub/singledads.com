@@ -49,14 +49,17 @@ return [
     'travel-insurance' => '',
 
     // Dating affiliates — Dating › App & Site Picks
+    // (Hinge & Bumble omitted — no public affiliate program; linked directly on the page.)
     'match'            => '',
-    'hinge'            => '',
     'singleparentmeet' => '',
-    'bumble'           => '',
     'eharmony'         => '',
     'ourtime'          => '',
 
     // Legal services affiliates — Legal › Finding Legal Help
     'rocket-lawyer' => '',
     'legalzoom'     => '',
+
+    // Budgeting / money tools — Financial › Budgeting
+    'rocket-money' => '',
+    'simplifi'     => '',
 ];
