@@ -23,4 +23,18 @@ return [
     'carecom'    => '',
     'sittercity' => '',
     'urbansitter' => '',
+
+    // Book affiliates (Amazon Associates) — Reading › Books
+    'book-moms-house-dads-house'         => '',
+    'book-coparenting-101'               => '',
+    'book-joint-custody-with-a-jerk'     => '',
+    'book-how-to-talk-so-kids-will-listen' => '',
+    'book-the-whole-brain-child'         => '',
+    'book-positive-discipline'           => '',
+    'book-single-dads-survival-guide'    => '',
+    'book-the-dads-edge'                 => '',
+    'book-no-more-mr-nice-guy'           => '',
+    'book-the-body-keeps-the-score'      => '',
+    'book-total-money-makeover'          => '',
+    'book-i-will-teach-you-to-be-rich'   => '',
 ];
