@@ -37,4 +37,14 @@ return [
     'book-the-body-keeps-the-score'      => '',
     'book-total-money-makeover'          => '',
     'book-i-will-teach-you-to-be-rich'   => '',
+
+    // Travel affiliates — Travel section
+    'expedia'      => '',
+    'booking'      => '',
+    'vrbo'         => '',
+    'viator'       => '',
+    'getyourguide' => '',
+    'going'        => '',  // flight-deal alerts (formerly Scott's Cheap Flights)
+    'koa'          => '',  // camping / road-trip lodging
+    'travel-insurance' => '',
 ];

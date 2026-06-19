@@ -55,6 +55,15 @@
       ]
     },
     {
+      "label": "Travel",
+      "url": "/travel/",
+      "children": [
+        { "label": "Destinations",        "url": "/travel/destinations/" },
+        { "label": "Budget Travel",        "url": "/travel/budget-travel/" },
+        { "label": "Traveling with Kids",  "url": "/travel/traveling-with-kids/" }
+      ]
+    },
+    {
       "label": "Merch",
       "url": "/merch/",
       "children": [
