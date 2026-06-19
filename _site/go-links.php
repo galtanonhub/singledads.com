@@ -55,4 +55,8 @@ return [
     'bumble'           => '',
     'eharmony'         => '',
     'ourtime'          => '',
+
+    // Legal services affiliates — Legal › Finding Legal Help
+    'rocket-lawyer' => '',
+    'legalzoom'     => '',
 ];
