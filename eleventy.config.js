@@ -11,6 +11,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/sitemap.xml");
   eleventyConfig.addPassthroughCopy("src/.htaccess");
   eleventyConfig.addPassthroughCopy("src/save-email.php"); // PHP form handler (runs on the cPanel server)
+  eleventyConfig.addPassthroughCopy("src/go.php");         // affiliate link redirector (/go/<slug>)
+  eleventyConfig.addPassthroughCopy("src/go-links.php");   // slug → affiliate URL lookup table
 
   // The 404 page ships verbatim (no templating) so /404.html stays byte-identical.
   eleventyConfig.addPassthroughCopy("src/404.html");
