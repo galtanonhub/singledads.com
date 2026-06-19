@@ -1138,6 +1138,14 @@ body::before {
   color: var(--text);
 }
 
+/* `.prose a` (0,1,1) would otherwise override the button's dark text + remove */
+/* the gold-on-gold underline, so scope the CTA at matching specificity.       */
+.prose a.platform-cta,
+.prose a.platform-cta:hover {
+  color: #141820;
+  text-decoration: none;
+}
+
 .platform-cta {
   display: inline-block;
   background: var(--accent);
